@@ -48,7 +48,8 @@ The amount of links in the folder '../' is: 0
 
 This script analyzes a text file and calculates the frequency of each word, displaying results in descending order by frequency.
 
-**Preparation:**
+**Preparation Required:**
+Create a sample text file before running this script:
 ```bash
 cd .. && echo "hello world hello bash bash bash" > sample.txt && cd scripts
 ```
@@ -75,7 +76,8 @@ Enter the file name you want to count words in: ../sample.txt
 
 This script prepends a specified prefix to all `.txt` files within a target directory.
 
-**Preparation:**
+**Preparation Required:**
+Create a test directory with sample `.txt` files:
 ```bash
 cd .. && mkdir -p test_files && echo "test content" > test_files/file1.txt && echo "more content" > test_files/file2.txt && cd scripts
 ```
@@ -109,7 +111,8 @@ cd .. && ls test_files/ && cd scripts
 
 This script computes word count, sentence count, and character count for all files within a specified directory.
 
-**Preparation:**
+**Preparation Required:**
+Create a test directory with sample text files:
 ```bash
 cd .. && mkdir -p test_files && echo "Hello world. This is a test! How are you?" > test_files/sample.txt && cd scripts
 ```
@@ -220,7 +223,8 @@ System time is Sat Jun 28 19:15:30 UTC 2026
 
 This script tests the reachability of URLs listed in a text file and reports their HTTP status.
 
-**Preparation:**
+**Preparation Required:**
+Create a text file containing a list of URLs to test:
 ```bash
 cd .. && cat > urls.txt << EOF
 https://www.google.com
@@ -258,7 +262,8 @@ https://www.example.com                            Not Reachable
 
 This script reads a text file and outputs its lines in alphabetical order.
 
-**Preparation:**
+**Preparation Required:**
+Create a text file with multiple lines for sorting:
 ```bash
 cd .. && cat > data.txt << EOF
 zebra
