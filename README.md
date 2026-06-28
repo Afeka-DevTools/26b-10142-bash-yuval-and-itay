@@ -1,8 +1,8 @@
 # Bash Scripts Project
 
 ## Team Members
-- **Yuval Dahan 331894596**
-- **Itay Felzot 331017764**
+- **Yuval Dahan**
+- **Itay Felzot**
 
 ---
 
