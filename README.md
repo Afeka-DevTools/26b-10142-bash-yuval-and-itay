@@ -1,86 +1,358 @@
-# Bash Scripts Project - Yuval Dahan and Itay Felzot
+# 🚀 Bash Scripts Project
 
-This is a group project by Yuval Dahan and Itay Felzot containing 10 bash scripts for various file and system operations.
+## 👥 Team Members
+- **Yuval Dahan**
+- **Itay Felzot**
 
-To get started, clone the repository with: git clone https://github.com/Afeka-DevTools/26b-10142-bash-yuval-and-itay.git
-Then navigate into the directory: cd 26b-10142-bash-yuval-and-itay
-Next, navigate into the scripts directory: cd scripts
-Now you're in the scripts directory and ready to run any of the scripts using bash. Here's what each script does and how to run it:
+---
 
-SCRIPTS BY ITAY FELZOT:
+## 📋 Quick Start
 
-The first script is countingFilesFoldersLinks.sh. To run this script, execute: bash countingFilesFoldersLinks.sh
-The script will prompt you to enter a folder path. You can press Enter to use the current directory as default. For example, you could enter ../. or /home/user/Documents or just press Enter. The script will then count and display how many folders, files, and symbolic links exist in that directory. Make sure the folder path you enter actually exists on your system.
+```bash
+git clone https://github.com/Afeka-DevTools/26b-10142-bash-yuval-and-itay.git
+cd 26b-10142-bash-yuval-and-itay
+cd scripts
+```
 
-The second script is freqOfWords.sh. To run this script, execute: bash freqOfWords.sh
-The script will ask you to enter the name of a file you want to analyze. Before running this script, you should create a text file. You can go back to the parent directory first and create a file. For example, run: cd .. && echo "hello world hello bash bash bash" > sample.txt && cd scripts
-Then when you run the script and it asks for the file name, enter: ../sample.txt
-The script will then count how often each word appears in that file and display the results sorted by frequency.
+Now you're ready to run any script! Just use: `bash scriptName.sh`
 
-The third script is prefixAdderScript.sh. To run this script, execute: bash prefixAdderScript.sh
-First, you should create a directory with some .txt files. For example, go back to the parent directory and create a test directory and files by running: cd .. && mkdir -p test_files && echo "test content" > test_files/file1.txt && echo "more content" > test_files/file2.txt && cd scripts
-Then when you run the script, it will ask you to enter a directory path. Enter: ../test_files
-Then the script will ask you to enter a prefix to add, for example: backup_ or draft_ or old_
-The script will then rename all .txt files in that directory by adding your prefix to their names. You can verify the changes by running: cd .. && ls test_files/ && cd scripts
+---
 
-The fourth script is scriptWordCount.sh. To run this script, execute: bash scriptWordCount.sh
-Before running, create a test directory with some text files. For example: cd .. && mkdir -p test_files && echo "Hello world. This is a test! How are you?" > test_files/sample.txt && cd scripts
-When you run the script, you can provide a directory as an argument like: bash scriptWordCount.sh ../test_files
-Or you can just run: bash scriptWordCount.sh
-And it will use the current directory by default. The script will then go through all files in that directory and count the number of words, sentences, and characters in each file, displaying the results for each file.
+## 🔧 Scripts by Itay Felzot
 
-The fifth script is sizeOfFileChecker.sh. To run this script, execute: bash sizeOfFileChecker.sh
-The script will ask you to enter a file size in bytes. You can press Enter to use 1024 bytes as the default. For example, you could enter 5000 or 1048576. The script will then count how many files in the current directory are larger than the size you specified and display the result.
+### 1. **countingFilesFoldersLinks.sh** 📁
+Counts the number of folders, files, and symbolic links in a specified directory.
 
-SCRIPTS BY YUVAL DAHAN:
+**How to run:**
+```bash
+bash countingFilesFoldersLinks.sh
+```
 
-The sixth script is gitStatus.sh. To run this script, execute: bash gitStatus.sh
-The script will ask you to enter a folder path. You can press Enter to use the current directory as default. Before running this, make sure you have at least one folder that contains a git repository. You can provide a path like ../ to check the parent directory, or just press Enter to check the current directory. The script will then check all subdirectories within that path, and for each one that contains a .git repository, it will display the git status of that repository.
+**Input required:**
+- Folder path (optional, press Enter for current directory)
 
-The seventh script is importantDetails.sh. To run this script, execute: bash importantDetails.sh
-This script doesn't require any input and doesn't need any setup. When you run it, it will automatically display important system environment variables and information such as the current user, home directory, current working directory, shell in use, system language, the system PATH, and the current system time.
+**Example:**
+```
+Enter the folder path you want to count files, folders and links in (Default is ._): ../
+The amount of folders in the folder '../' is: 1
+The amount of files in the folder '../' is: 10
+The amount of links in the folder '../' is: 0
+```
 
-The eighth script is siteAbvTester.sh. To run this script, execute: bash siteAbvTester.sh
-First, you should create a text file containing a list of URLs, one URL per line. You can create this file by going to the parent directory: cd .. && cat > urls.txt << EOF
+---
+
+### 2. **freqOfWords.sh** 📊
+Counts the frequency of words appearing in a text file and displays them sorted by frequency.
+
+**Setup (before running):**
+```bash
+cd .. && echo "hello world hello bash bash bash" > sample.txt && cd scripts
+```
+
+**How to run:**
+```bash
+bash freqOfWords.sh
+```
+
+**Input required:**
+- File path to analyze (e.g., `../sample.txt`)
+
+**Example:**
+```
+Enter the file name you want to count words in: ../sample.txt
+      3 bash
+      2 hello
+      1 world
+```
+
+---
+
+### 3. **prefixAdderScript.sh** 📝
+Adds a prefix to all `.txt` files in a specified directory.
+
+**Setup (before running):**
+```bash
+cd .. && mkdir -p test_files && echo "test content" > test_files/file1.txt && echo "more content" > test_files/file2.txt && cd scripts
+```
+
+**How to run:**
+```bash
+bash prefixAdderScript.sh
+```
+
+**Inputs required:**
+1. Directory path (e.g., `../test_files`)
+2. Prefix to add (e.g., `backup_`, `draft_`, `old_`)
+
+**Example:**
+```
+Enter the prefix to add (e.g., 'draft_'): backup_
+Adding prefix 'backup_' to .txt files...
+Renaming: file1.txt -> backup_file1.txt
+Renaming: file2.txt -> backup_file2.txt
+Done!
+```
+
+**Verify:**
+```bash
+cd .. && ls test_files/ && cd scripts
+```
+
+---
+
+### 4. **scriptWordCount.sh** 📖
+Counts words, sentences, and characters in all files within a directory.
+
+**Setup (before running):**
+```bash
+cd .. && mkdir -p test_files && echo "Hello world. This is a test! How are you?" > test_files/sample.txt && cd scripts
+```
+
+**How to run:**
+```bash
+bash scriptWordCount.sh ../test_files
+```
+
+**Input required (optional):**
+- Directory path (or uses current directory by default)
+
+**Example:**
+```
+Processing file: sample.txt
+Words: 8
+Sentences: 2
+Characters: 47
+```
+
+---
+
+### 5. **sizeOfFileChecker.sh** 💾
+Checks how many files are larger than a specified size (in bytes).
+
+**How to run:**
+```bash
+bash sizeOfFileChecker.sh
+```
+
+**Input required:**
+- File size in bytes (optional, default is 1024 bytes)
+
+**Example:**
+```
+Enter the size in bytes to check for files bigger than (Default is 1024): 5000
+The amount of files bigger than 5000 bytes is: 3
+```
+
+---
+
+## 🌐 Scripts by Yuval Dahan
+
+### 1. **gitStatus.sh** 🔀
+Shows Git status for all subdirectories that contain a `.git` repository.
+
+**How to run:**
+```bash
+bash gitStatus.sh
+```
+
+**Input required:**
+- Folder path (optional, press Enter for current directory)
+
+**Example:**
+```
+Enter the folder path you want to check Git status in (Default is .): ../
+Git status for sub folders in: ../
+----------------------------------------
+Git status for ../repo1/:
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+```
+
+---
+
+### 2. **importantDetails.sh** ℹ️
+Displays important system environment variables and information.
+
+**How to run:**
+```bash
+bash importantDetails.sh
+```
+
+**Input required:**
+- ❌ No input needed - runs automatically!
+
+**Example output:**
+```
+=========================================
+   Important Environment Variables Info  
+=========================================
+
+Current User:       itay
+Home Directory:    /home/itay
+Current Directory: /home/itay/26b-10142-bash-yuval-and-itay/scripts
+Shell in Use:      /bin/bash
+System Language:   en_US.UTF-8
+
+System PATH:
+  - /usr/local/sbin
+  - /usr/local/bin
+  - /usr/sbin
+  - /usr/bin
+
+System time is Sat Jun 28 19:15:30 UTC 2026
+
+=========================================
+```
+
+---
+
+### 3. **siteAbvTester.sh** 🌍
+Tests a list of URLs and checks if they are reachable or not.
+
+**Setup (before running):**
+```bash
+cd .. && cat > urls.txt << EOF
 https://www.google.com
 https://www.github.com
 https://www.example.com
 EOF
-Then go back to scripts: cd scripts
-Then when you run the script, it will ask you to enter the path to this file. Enter: ../urls.txt
-The script will then test each URL and display whether each one is reachable or not in a table format. Make sure you have curl installed on your system for this script to work.
+cd scripts
+```
 
-The ninth script is sortLinesScript.sh. To run this script, execute: bash sortLinesScript.sh
-Before running, you should create a text file with multiple lines. You can create a file by going to the parent directory: cd .. && cat > data.txt << EOF
+**How to run:**
+```bash
+bash siteAbvTester.sh
+```
+
+**Input required:**
+- Path to file containing URLs (optional, default is `../urls.txt`)
+
+**Example output:**
+```
+Enter the path of the file containing the list of URLs (Default is urls.txt): ../urls.txt
+Checking URLs from file: ../urls.txt
+URL                                                Status    
+------------------------------------------------------ ----------
+https://www.google.com                             Reachable
+https://www.github.com                             Reachable
+https://www.example.com                            Not Reachable
+```
+
+⚠️ **Requires:** `curl` must be installed on your system
+
+---
+
+### 4. **sortLinesScript.sh** 🔤
+Sorts the lines of a file alphabetically.
+
+**Setup (before running):**
+```bash
+cd .. && cat > data.txt << EOF
 zebra
 apple
 banana
 cherry
 EOF
-Then go back to scripts: cd scripts
-Then when you run the script, it will ask you to enter the name of a file. Enter: ../data.txt
-The script will then read that file and display its lines sorted alphabetically.
+cd scripts
+```
 
-The tenth script is suffixCounter.sh. To run this script, execute: bash suffixCounter.sh
-The script will ask you to enter a suffix to search for. For example, you could enter .txt or .sh or .py or .md. The script will then count how many files in the current directory and subdirectories have that suffix and display the count. For example, to count all shell script files, enter: .sh
+**How to run:**
+```bash
+bash sortLinesScript.sh
+```
 
-COMPLETE WORKFLOW EXAMPLE:
+**Input required:**
+- File name/path to sort (e.g., `../data.txt`)
 
-Here is a complete example of how to set up and run scripts from start to finish. First, clone the repository: git clone https://github.com/Afeka-DevTools/26b-10142-bash-yuval-and-itay.git
-Then move into the repository directory: cd 26b-10142-bash-yuval-and-itay
-Then move into the scripts directory: cd scripts
-Now let's run the importantDetails.sh script which requires no input or setup: bash importantDetails.sh
-This will immediately display system information. Alternatively, if you want to run the countingFilesFoldersLinks.sh script, execute: bash countingFilesFoldersLinks.sh
-When prompted, press Enter to use the current directory, or type a path like ../ and press Enter. The script will count and display the number of folders, files, and links in that directory. Or if you want to run the suffixCounter.sh script, execute: bash suffixCounter.sh
-When prompted, type: .sh
-The script will count how many shell script files exist in the current directory and subdirectories. For a more complete example with the prefixAdderScript.sh, first create test files from the parent directory: cd .. && mkdir -p test_files && echo "content1" > test_files/doc1.txt && echo "content2" > test_files/doc2.txt && cd scripts
-Then run: bash prefixAdderScript.sh
-When asked for the directory, enter: ../test_files
-When asked for the prefix, enter: backup_
-The script will rename the files to backup_doc1.txt and backup_doc2.txt. You can verify this worked by running: cd .. && ls test_files/ && cd scripts
+**Example output:**
+```
+Enter the filename to sort: ../data.txt
+apple
+banana
+cherry
+zebra
+Sorted lines from '../data.txt'
+```
 
-REQUIREMENTS:
+---
 
-All scripts require bash version 4.0 or higher. Standard Unix utilities must be installed including find, sort, grep, and wc. The siteAbvTester.sh script requires curl to be installed. The gitStatus.sh script requires git to be installed on your system.
+### 5. **suffixCounter.sh** 🏷️
+Counts files with a specific suffix/extension.
 
-That's everything you need to know to use all the scripts in this project. Clone the repository, navigate to the scripts directory with cd scripts, and then run whichever script you need based on your requirements using bash followed by the script name. Remember to create the necessary files and directories before running scripts that require them.
+**How to run:**
+```bash
+bash suffixCounter.sh
+```
+
+**Input required:**
+- Suffix to search for (e.g., `.txt`, `.sh`, `.py`, `.md`)
+
+**Example:**
+```
+Enter the suffix you want to count: .sh
+The amount of files with the suffix '.sh' is: 10
+```
+
+---
+
+## 📚 Complete Workflow Example
+
+Here's a step-by-step guide to set up and run a script from scratch:
+
+**Step 1: Clone and navigate**
+```bash
+git clone https://github.com/Afeka-DevTools/26b-10142-bash-yuval-and-itay.git
+cd 26b-10142-bash-yuval-and-itay
+cd scripts
+```
+
+**Step 2: Run a simple script (no setup needed)**
+```bash
+bash importantDetails.sh
+```
+This will display your system information immediately.
+
+**Step 3: Run a script that needs input (with setup)**
+```bash
+bash suffixCounter.sh
+```
+When prompted, enter: `.sh`
+
+**Step 4: Run a script that needs files (full example)**
+```bash
+cd .. && mkdir -p test_files && echo "content1" > test_files/doc1.txt && echo "content2" > test_files/doc2.txt && cd scripts
+bash prefixAdderScript.sh
+```
+When asked for the directory, enter: `../test_files`
+When asked for the prefix, enter: `backup_`
+
+**Step 5: Verify changes**
+```bash
+cd .. && ls test_files/ && cd scripts
+```
+
+---
+
+## ⚙️ System Requirements
+
+| Requirement | Details |
+|------------|---------|
+| **Bash** | Version 4.0 or higher |
+| **Unix utilities** | `find`, `sort`, `grep`, `wc` |
+| **For siteAbvTester.sh** | `curl` must be installed |
+| **For gitStatus.sh** | `git` must be installed |
+
+---
+
+## 🎯 Summary
+
+✅ Clone the repository  
+✅ Navigate to the `scripts` directory  
+✅ Run scripts with `bash scriptName.sh`  
+✅ Create necessary files/directories before running (see individual script sections)  
+✅ Follow the prompts for any required input
+
+---
+
+**Happy scripting! 🎉**
